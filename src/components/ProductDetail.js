@@ -52,7 +52,7 @@ const ProductDetail = () => {
             <div className="d-desc">{description}</div>
             <div className="add-to-cart-btn">
               <Button variant="contained" style={{backgroundColor:"#035397",color:"#FFF", margin:'0 auto'}} >
-                Add to cart
+                Add To Cart
               </Button>
             </div>
           </div>

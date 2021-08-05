@@ -54,11 +54,13 @@ export const addProductToCartReducer = (state = initCart, action) => {
       };
     } else {
       addedProductItem = 1;
+      
       let newTotal = state.total + addedProductItem.price;
       return {
         ...state,
         addedProduct: [...state.addedProduct],
         total: newTotal,
+
       };
     }
   }else{
