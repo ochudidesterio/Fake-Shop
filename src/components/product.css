@@ -1,0 +1,45 @@
+.img-a{
+  width: 100%;
+  height: 220px;
+}
+.img{
+  width: 100%;
+  height: 100%;
+}
+.card-content{
+  display: block;
+  flex-direction: column;
+  width: 280px;
+  height: 400px;
+}
+.cont>.head{
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+  color: #035397;
+}
+.cont>.price{
+  font-size: 22px;
+  margin-top: 20px;
+  color:#FAAD80;
+}
+.cont>.met{
+  font-size: 14px;
+  margin-top: 20px;
+  color: #035397;
+}
+.view-btn{
+  margin-bottom: 10px;
+}
+.wait{
+  
+  color: brown;
+  font-size: 24px;
+  height: 100vh;
+}
+@media screen and (max-width:700px){
+  .card-content{
+    width: 90vw;
+    margin: auto;
+  }
+}
