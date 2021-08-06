@@ -4,6 +4,7 @@
  color: #035397;
  background-color: whitesmoke;
  font-size: 16px;
+ overflow-y: auto;
 }
 
 

@@ -1,19 +1,27 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import useStyles from "./styledcard";
 import Card from "@material-ui/core/Card";
 import Button from "@material-ui/core/Button";
 import VisibilityIcon from "@material-ui/icons/Visibility";
+import IconButton from '@material-ui/core/IconButton';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import { addToCart } from "../redux/actions/cartActions";
 import { useHistory } from "react-router-dom";
 import "./product.css";
 
 const Product = () => {
+   const dispatch = useDispatch()
   const history = useHistory();
   const classes = useStyles();
   const products = useSelector((state) => state.allProducts.products);
-
+  
   const renderList = products.map((product) => {
     const { id, title, image, price, category } = product;
+    const addProductToCart =()=>{
+       dispatch(addToCart(id))
+   }
+    
     return (
       <Card className={classes.root} variant="outlined" key={id}>
         <div className="card-content">
@@ -37,6 +45,12 @@ const Product = () => {
           >
             View
           </Button>
+          <div className="add-to-cart-icon">
+            <IconButton onClick={()=>{addProductToCart()}} style={{ background: "#035397", color: "#fff" }} aria-label="add to shopping cart">
+        <AddShoppingCartIcon />
+      </IconButton>
+          </div>
+          
         </div>
       </Card>
     );
@@ -52,5 +66,15 @@ const Product = () => {
     </>
   );
 };
+const mapStateToPops = (state) => {
+  return {
+    products: state.allProducts.products,
+  };
+};
+const mapDispatchToProp =dispatch=>{
+  return{
+    addToCart: (id)=>dispatch(addToCart(id))
+  }
+}
 
 export default Product;

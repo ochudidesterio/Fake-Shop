@@ -30,6 +30,11 @@
 }
 .view-btn{
   margin-bottom: 10px;
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: space-between;
+  
 }
 .wait{
   

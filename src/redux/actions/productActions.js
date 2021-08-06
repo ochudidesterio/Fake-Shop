@@ -17,9 +17,4 @@ export const removeSeletedProduct =()=>{
     type:actionTypes.REMOVE_SELECTED,
    }
 }
-export const addToCart =(id)=>{
-  return{
-    type:actionTypes.ADD_TO_CART,
-    payload:id
-  }
-}
+
