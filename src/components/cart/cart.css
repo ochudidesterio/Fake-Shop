@@ -41,6 +41,9 @@
 .cart-category,.cart-price,.cart-title,.cart-qty{
   margin-bottom: 20px;
 }
+.cart-qty{
+  display: flex;
+}
 .cart-summary{
   width: 300px;
   height: 200px;

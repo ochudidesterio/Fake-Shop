@@ -37,7 +37,7 @@ export const productReducer = (state = initialState, action) => {
         ...state,
         cart: state.cart.map((productItem) =>
           productItem.id === action.payload.id
-            ? { ...productItem, quantity: action.payload.quantity }
+            ? { ...productItem, quantity: +action.payload.quantity }
             : productItem
         ),
       };
@@ -49,6 +49,8 @@ export const productReducer = (state = initialState, action) => {
           (productItem) => productItem.id !== action.payload.id
         ),
       };
+      
+
 
     default:
       return state;

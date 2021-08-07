@@ -6,6 +6,7 @@ import {
   seletedProduct,
   removeSeletedProduct,
 } from "../redux/actions/productActions";
+import { addToCart } from "../redux/actions/cartActions";
 import "./productdetail.css";
 import Card from "@material-ui/core/Card";
 import Button from "@material-ui/core/Button";
@@ -57,6 +58,7 @@ const ProductDetail = () => {
                     color: "#FFF",
                     margin: "0 auto",
                   }}
+                  onClick={()=>{dispatch(addToCart(productId))}}
                 >
                   Add To Cart
                 </Button>
