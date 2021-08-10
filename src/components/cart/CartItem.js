@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import "./cart.css";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "@material-ui/core/Card";
@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { removeFromCart,updateCartQuantity } from "../../redux/actions/cartActions";
 
-import img from "../Yark-Blue-School-Bag-SDL285798089-1-ed5c2.jpg";
+
 
 const CartItem = () => {
   const cartItem = useSelector((state) => state.allProducts.cart);

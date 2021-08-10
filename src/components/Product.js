@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import IconButton from '@material-ui/core/IconButton';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-import { addToCart } from "../redux/actions/cartActions";
+import { addToCart ,loadCurrentProduct} from "../redux/actions/cartActions";
 import { useHistory } from "react-router-dom";
 import "./product.css";
 
@@ -40,6 +40,7 @@ const Product = () => {
             startIcon={<VisibilityIcon />}
             onClick={() => {
               history.push(`/product/${id}`);
+              dispatch(loadCurrentProduct(product))
             }}
             style={{ background: "#035397", color: "#fff" }}
           >
@@ -66,15 +67,6 @@ const Product = () => {
     </>
   );
 };
-const mapStateToPops = (state) => {
-  return {
-    products: state.allProducts.products,
-  };
-};
-const mapDispatchToProp =dispatch=>{
-  return{
-    addToCart: (id)=>dispatch(addToCart(id))
-  }
-}
+
 
 export default Product;

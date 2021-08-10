@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import { useDispatch, connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import Product from "./Product";
 import { Grid } from "@material-ui/core";
 import { setProducts } from "../redux/actions/productActions";
@@ -32,10 +32,6 @@ const ProductListing = () => {
     </div>
   );
 };
-const mapStateToPops = (state) => {
-  return {
-    products: state.allProducts.products,
-  };
-};
 
-export default connect(mapStateToPops)(ProductListing);
+
+export default ProductListing;

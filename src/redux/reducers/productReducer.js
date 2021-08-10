@@ -49,6 +49,10 @@ export const productReducer = (state = initialState, action) => {
           (productItem) => productItem.id !== action.payload.id
         ),
       };
+      case actionTypes.CURRENT_ITEM:
+        return{
+          ...state, currentItem: action.payload
+        }
       
 
 

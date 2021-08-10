@@ -13,7 +13,7 @@ import Button from "@material-ui/core/Button";
 
 const ProductDetail = () => {
   const product = useSelector((state) => state.product);
-  const { title, price, category, description, image } = product;
+  const { id,title, price, category, description, image } = product;
   const { productId } = useParams();
   const dispatch = useDispatch();
   console.log(product);
@@ -58,7 +58,7 @@ const ProductDetail = () => {
                     color: "#FFF",
                     margin: "0 auto",
                   }}
-                  onClick={()=>{dispatch(addToCart(productId))}}
+                  onClick={()=>{dispatch(addToCart(id))}}
                 >
                   Add To Cart
                 </Button>
